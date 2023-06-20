@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await app.listen(3000);
-
+  console.log("aqui!S");
   const server = new RabbitmqServer('amqp://admin:admin@rabbitmq:5672');
   await server.start();
   await server.consume('list',async (message) =>

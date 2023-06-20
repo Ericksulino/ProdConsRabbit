@@ -10,7 +10,6 @@ async function consumer() {
   await server.start();
   await server.consume('list',async (message) =>
   {
-    console.log("aqui!S");
     const buffer: Buffer = message.content;
     const bufferString: string = buffer.toString('utf-8');
     const objetoJson = JSON.parse(bufferString);

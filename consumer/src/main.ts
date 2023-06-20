@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import RabbitmqServer from './rabbitmq-server';
 import fetch from 'node-fetch';
 
-async function bootstrap() {
+async function consumer() {
   const app = await NestFactory.create(AppModule);
   await app.listen(3000);
   const server = new RabbitmqServer('amqp://admin:admin@rabbitmq:5672');
@@ -29,4 +29,4 @@ async function bootstrap() {
     }
   });
 }
-bootstrap();
+consumer();

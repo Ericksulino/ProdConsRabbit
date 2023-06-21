@@ -2,7 +2,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import RabbitmqServer from './rabbitmq-server';
 import fetch from 'node-fetch';
-import mongoose from '@nestjs/mongoose'
 
 async function consumer() {
   const app = await NestFactory.create(AppModule);
